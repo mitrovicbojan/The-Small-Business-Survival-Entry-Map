@@ -9,16 +9,19 @@ RENT_DATA = os.path.join(PROJECT_ROOT, "data", "processed", "zillow_rent_cleaned
 def calculate_survival_metrics():
     df_biz = pd.read_csv(BIZ_DATA)
     df_rent = pd.read_csv(RENT_DATA)
+    df_biz['address_zip'] = df_biz['address_zip'].astype(str)
+    df_rent['address_zip'] = df_rent['address_zip'].astype(str)
     
     # Calculate zip health (stability)
     
-    df_biz['license_creation_date'] = pd.to_datetime(df_biz['license_creation_date'])
+    df_biz['license_creation_date'] = pd.to_datetime(df_biz['license_creation_date'], errors='coerce')
     current_date = pd.to_datetime('today')
     df_biz['age_years'] = (current_date - pd.to_datetime(df_biz['license_creation_date'])).dt.days / 365.25    
     
     # calculate category density and velocity 
     zip_stats = df_biz.groupby('address_zip')['age_years'].agg(['mean', 'count']).reset_index()
     zip_stats.columns = ['address_zip', 'neighborhood_avg_age', 'total_biz_in_zip']
+    zip_stats['address_zip'] = zip_stats['address_zip'].astype(str)
         
     one_year_ago = current_date - pd.Timedelta(days=365)
     recent = df_biz[df_biz['license_creation_date'] > one_year_ago]
