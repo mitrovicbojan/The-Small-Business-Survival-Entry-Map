@@ -1,0 +1,21 @@
+# Python Environment
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data Files 
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE Settings
+.vscode/
+
+# Node/Frontend (if you use npm later)
+node_modules/
