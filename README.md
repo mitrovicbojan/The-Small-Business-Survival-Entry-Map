@@ -1,15 +1,15 @@
 # 🗽 NYC Venture Intelligence Dashboard
 
-![Dashboard Preview](dashboard-preview.png)
+![Dashboard Preview](images/dashboard-preview.png)
 
-[![Live Demo](https://nyc-intel-dashboard.netlify.app/)]
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://nyc-intel-dashboard.netlify.app/)
 [![Data Source](https://img.shields.io/badge/Data-NYC_Open_Data-blue)](https://opendata.cityofnewyork.us/)
 
 ## 📊 Overview
 
 This Business Intelligence (BI) dashboard provides a data-driven analysis of the New York City commercial landscape. It moves beyond raw numbers to provide **Strategic Insights**, helping entrepreneurs identify "Gold Mine" neighborhoods where business stability is high and overhead (rent) is low.
 
-![Dashboard](dashboard-pie-table.png)
+![Dashboard](images/dashboard-pie-table.png)
 
 ---
 
