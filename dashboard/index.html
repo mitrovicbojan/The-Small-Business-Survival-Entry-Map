@@ -4,41 +4,119 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Business Survival Engine (NYC)</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="/dashboard/assets/css/style.css" />
   </head>
   <body>
     <div id="dashboard">
-      <aside id="sidebar">
-        <h2>Market Insights</h2>
-        <div id="controls">
-          <label for="category-select">Select Business Type:</label>
-          <select id="category-select">
-            <option value="">-- Choose an Industry --</option>
-          </select>
-        </div>
-
-        <hr />
-
-        <div id="status-display">
-          <p class="instruction">Click a ZIP code on the map to see details.</p>
-          <div id="zip-details" class="hidden">
-            <h3 id="detail-zip">ZIP: 00000</h3>
-            <p>
-              <strong>Neighborhood:</strong> <span id="detail-name">---</span>
-            </p>
-            <p><strong>Rent:</strong> $<span id="detail-rent">0</span></p>
-            <p>
-              <strong>Stability:</strong> <span id="detail-age">0</span> yrs avg
-            </p>
-            <p>
-              <strong>Top Recommended:</strong> <span id="detail-bet">---</span>
-            </p>
+      <header>
+        <div class="header-main">
+          <h1>NYC VENTURE <span class="glow">INTELLIGENCE</span></h1>
+          <div class="controls">
+            <label for="category-select" class="dropdown-label"
+              >Target Industry</label
+            >
+            <select id="category-select"></select>
           </div>
         </div>
-      </aside>
 
-      <main id="map"></main>
+        <div class="pro-tip-banner" id="pro-tip">
+          <strong>⚡ STRATEGIC ANALYSIS:</strong>
+          <span id="tip-text">Scanning New York City market zones...</span>
+        </div>
+      </header>
+
+      <section class="kpi-container">
+        <div class="card rent">
+          <h3>Avg. Monthly Rent</h3>
+          <p id="kpi-rent">--</p>
+          <span class="desc"
+            >Baseline operational overhead for local commercial space.</span
+          >
+        </div>
+        <div class="card stability">
+          <h3>Market Stability</h3>
+          <p id="kpi-stability">--</p>
+          <span class="desc"
+            >Average business lifespan in years. Measures area resilience.</span
+          >
+        </div>
+        <div class="card opportunity">
+          <h3>Opportunity Score</h3>
+          <p id="kpi-score">--</p>
+          <span class="desc"
+            >Growth potential vs. risk ratio. Goal: > 0.005.</span
+          >
+        </div>
+        <div class="card saturation">
+          <h3>Market Saturation</h3>
+          <p id="kpi-saturation">--</p>
+          <span class="desc"
+            >Competition density. Lower % indicates "Blue Ocean" space.</span
+          >
+        </div>
+      </section>
+
+      <div class="analytics-grid">
+        <div class="chart-box">
+          <div class="chart-header">
+            <h3>Top Growth Zones</h3>
+            <p class="chart-desc">
+              Which ZIP codes offer the highest mathematical chance of survival?
+            </p>
+          </div>
+          <div class="chart-container">
+            <canvas id="opportunityChart"></canvas>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-header">
+            <h3>The Investment "Sweet Spot"</h3>
+            <p class="chart-desc">
+              Finding the balance: High Stability (Top) vs. Low Rent (Left).
+            </p>
+          </div>
+          <div class="chart-container"><canvas id="scatterChart"></canvas></div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-header">
+            <h3>Market DNA Breakdown</h3>
+            <p class="chart-desc">
+              What other industries are thriving in this specific ZIP code?
+            </p>
+          </div>
+          <div class="chart-container">
+            <canvas id="marketShareChart"></canvas>
+          </div>
+        </div>
+        <div class="table-box">
+          <div class="table-header-main">
+            <h3>Neighborhood Directory</h3>
+            <p class="chart-desc">
+              Full NYC market directory with algorithmic "Best Bet" pivots.
+            </p>
+            <input
+              type="text"
+              id="zip-search"
+              placeholder="Filter by ZIP or Neighborhood..."
+            />
+          </div>
+          <div class="table-scroll">
+            <table id="summaryTable">
+              <thead>
+                <tr>
+                  <th>ZIP / Area</th>
+                  <th>Market Type</th>
+                  <th>Pivot Strategy</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
+
     <script src="/dashboard/assets/js/main.js"></script>
   </body>
 </html>
