@@ -1,0 +1,43 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #1a1a1a;
+  color: white;
+}
+
+#dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+#map {
+  flex-grow: 1;
+  background: #121212;
+}
+
+#controls {
+  margin-bottom: 20px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 4px;
+}
+
+/* .hidden {
+  display: none;
+} */
+
+#zip-details {
+  background: #333;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #4caf50;
+}

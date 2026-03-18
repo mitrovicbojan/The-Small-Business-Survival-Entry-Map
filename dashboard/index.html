@@ -7,6 +7,38 @@
     <link rel="stylesheet" href="/dashboard/assets/css/style.css" />
   </head>
   <body>
+    <div id="dashboard">
+      <aside id="sidebar">
+        <h2>Market Insights</h2>
+        <div id="controls">
+          <label for="category-select">Select Business Type:</label>
+          <select id="category-select">
+            <option value="">-- Choose an Industry --</option>
+          </select>
+        </div>
+
+        <hr />
+
+        <div id="status-display">
+          <p class="instruction">Click a ZIP code on the map to see details.</p>
+          <div id="zip-details" class="hidden">
+            <h3 id="detail-zip">ZIP: 00000</h3>
+            <p>
+              <strong>Neighborhood:</strong> <span id="detail-name">---</span>
+            </p>
+            <p><strong>Rent:</strong> $<span id="detail-rent">0</span></p>
+            <p>
+              <strong>Stability:</strong> <span id="detail-age">0</span> yrs avg
+            </p>
+            <p>
+              <strong>Top Recommended:</strong> <span id="detail-bet">---</span>
+            </p>
+          </div>
+        </div>
+      </aside>
+
+      <main id="map"></main>
+    </div>
     <script src="/dashboard/assets/js/main.js"></script>
   </body>
 </html>
